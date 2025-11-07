@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Content Planning Guide — RubyZ Maison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Libre+Baskerville:ital@0;1&display=swap');
+        
+        @font-face {
+            font-family: 'Holimount';
+            src: url('https://use.typekit.net/af/2e5b4f/00000000000000003b9b3068/27/l?subset_id=2&fvd=n4&v=3') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --ruby-accent: #CE0D35;
+            --graphite: #818282;
+            --deep-ruby: #440C17;
+            --black: #000000;
+            --white: #FFFFFF;
+            --light-gray: #f8f8f8;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            line-height: 1.7;
+            color: var(--black);
+            background: var(--white);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--deep-ruby);
+            color: var(--white);
+            margin: -40px -20px 60px;
+            padding: 40px 20px;
+        }
+        
+        .logo-image {
+            width: 280px;
+            margin-bottom: 60px;
+            opacity: 1;
+        }
+        
+        h1 {
+            font-family: 'Holimount', 'Libre Baskerville', serif;
+            font-size: 3.5em;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+        
+        .subtitle {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.2em;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto;
+            letter-spacing: 0.5px;
+        }
+        
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.2em;
+            color: var(--deep-ruby);
+            margin: 60px 0 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--ruby-accent);
+        }
+        
+        h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.5em;
+            color: var(--deep-ruby);
+            margin: 40px 0 20px;
+            font-weight: 400;
+        }
+        
+        h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.1em;
+            color: var(--black);
+            margin: 30px 0 15px;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        
+        .intro-box {
+            background: var(--light-gray);
+            padding: 30px;
+            border-left: 4px solid var(--ruby-accent);
+            margin: 40px 0;
+            border-radius: 0;
+        }
+        
+        .intro-box p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        ul, ol {
+            margin: 20px 0 30px 20px;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .tip-box {
+            background: #fff9f0;
+            border: 1px solid #f0d4a0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0;
+            position: relative;
+        }
+        
+        .tip-box:before {
+            content: 'TIP';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #fff9f0;
+            padding: 0 10px;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--deep-ruby);
+        }
+        
+        .example-box {
+            background: var(--light-gray);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-style: italic;
+            border-left: 3px solid var(--graphite);
+        }
+        
+        .checklist {
+            background: var(--white);
+            border: 2px solid var(--ruby-accent);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .checklist h3 {
+            color: var(--ruby-accent);
+            margin-top: 0;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .checklist label {
+            display: block;
+            margin: 15px 0;
+            cursor: pointer;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--graphite);
+            color: var(--graphite);
+        }
+        
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(206, 13, 53, 0.15) 60%);
+            padding: 2px 4px;
+        }
+        
+        .section-divider {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--graphite);
+            font-size: 1.5em;
+            letter-spacing: 10px;
+        }
+        
+        code {
+            background: var(--light-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            width: 30px;
+            height: 30px;
+            background: var(--ruby-accent);
+            color: var(--white);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        
+        @media print {
+            .cover-page {
+                page-break-after: always;
+            }
+            
+            h2 {
+                page-break-before: auto;
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-page">
+        <img src="rubyz-logo.png" alt="RubyZ Maison" class="logo-image">
+        <h1>Website Content Planning Guide</h1>
+        <p class="subtitle">Your friendly roadmap to organizing everything we need to bring your website to life</p>
+    </div>
+    
+    <div class="container">
+        <div class="intro-box">
+            <p><strong>Hey there!</strong></p>
+            <p>I'm so excited to be working with you on your new website! This guide is here to make the content-gathering process as smooth and stress-free as possible. Think of it as your personal roadmap — we'll walk through everything step by step.</p>
+            <p>No need to feel overwhelmed. Grab your favorite beverage, take a deep breath, and let's tackle this together. By the end, you'll have everything organized and ready for me to work my design magic.</p>
+            <p>Remember: <span class="highlight">Your website is your digital home</span>, and we're going to make it feel exactly like you.</p>
+        </div>
+        
+        <h2>Before We Begin</h2>
+        <p>Here's the thing about great websites — they're not just pretty designs. They're <strong>stories</strong>. Your story, specifically. This guide will help you tell that story in a way that connects with your people and helps your business grow.</p>
+        
+        <p>You don't need to be a professional writer. You just need to be you. Write like you're talking to a friend over coffee. That authentic voice? That's what we're after.</p>
+        
+        <div class="tip-box">
+            <p><strong>Pro tip:</strong> Don't aim for perfection on your first draft. Just get your thoughts down. We can polish everything together later. Progress over perfection, always.</p>
+        </div>
+        
+        <div class="section-divider">• • •</div>
+        
+        <h2>Part 1: Your Page-by-Page Content Guide</h2>
+        
+        <p>Let's break down each page of your website. I'll tell you exactly what content to gather, give you some copywriting magic, and share examples to spark your creativity.</p>
+        
+        <h3>Home Page</h3>
+        <p>Your home page is like your digital front door — it's where you make that crucial first impression. We need to nail this one.</p>
+        
+        <h4>What to Include:</h4>
+        <ul>
+            <li><strong>Hero headline:</strong> One powerful sentence that tells visitors exactly what you do and who you help</li>
+            <li><strong>Subheadline:</strong> A supporting sentence that adds emotion or clarification</li>
+            <li><strong>Brief introduction:</strong> 2-3 sentences about you or your business (save the full story for your About page)</li>
+            <li><strong>What you offer:</strong> Quick overview of your main services or products</li>
+            <li><strong>Social proof:</strong> A testimonial, client logos, or a key achievement</li>
+            <li><strong>Clear call-to-action:</strong> What do you want visitors to do next?</li>
+        </ul>
+        
+        <h4>Copywriting Tips:</h4>
+        <ul>
+            <li>Lead with benefits, not features. Instead of "I offer web design services," try "I help creative entrepreneurs build websites that actually convert."</li>
+            <li>Use "you" more than "I" — make it about your visitor</li>
+            <li>Keep sentences short and punchy for easy scanning</li>
+            <li>Include emotional words that resonate with your ideal client</li>
+        </ul>
+        
+        <div class="example-box">
+            <strong>Example Headlines:</strong><br>
+            "Welcome to your creative sanctuary online"<br>
+            "Where bold ideas meet beautiful design"<br>
+            "I help wellness brands create calming digital spaces"<br>
+            "Your story deserves a website that tells it beautifully"
+        </div>
+        
+        <h4>SEO-Friendly Writing:</h4>
+        <ul>
+            <li>Include your main service + location if relevant (e.g., "Web Designer in Melbourne Beach")</li>
+            <li>Use natural language — Google loves content that sounds human</li>
+            <li>Think about what your ideal client would search for</li>
+        </ul>
+        
+        <h3>About Page</h3>
+        <p>This is where you get to be human. People work with people, not businesses. Let your personality shine through!</p>
+        
+        <h4>What to Include:</h4>
+        <ul>
+            <li><strong>Your story:</strong> How did you get here? What's your why?</li>
+            <li><strong>Your values:</strong> What drives your work?</li>
+            <li><strong>Your expertise:</strong> What makes you qualified (without the boring resume stuff)</li>
+            <li><strong>Personal touches:</strong> Fun facts, hobbies, or what you're watching on Netflix</li>
+            <li><strong>A professional photo:</strong> Yes, it matters! Show your face.</li>
+            <li><strong>Call-to-action:</strong> Guide them to the next step</li>
+        </ul>
+        
+        <h4>Copywriting Tips:</h4>
+        <ul>
+            <li>Start with a hook — something unexpected or relatable</li>
+            <li>Use storytelling. "In 2019, I quit my corporate job with nothing but a laptop and a dream..."</li>
+            <li>Be vulnerable. Share a challenge you overcame</li>
+            <li>Write in first person ("I" not "we" unless you're a team)</li>
+            <li>End with connection — invite them to reach out</li>
+        </ul>
+        
+        <div class="example-box">
+            <strong>Great About Page Starters:</strong><br>
+            "I never thought I'd be here, but..."<br>
+            "Plot twist: I used to be terrible at [your thing]"<br>
+            "Hi, I'm [Name], and I believe..."<br>
+            "My journey started in the most unexpected place..."
+        </div>
+        
+        <h3>Services Page</h3>
+        <p>This is where you show how you can help. Focus on transformation, not transactions.</p>
+        
+        <h4>What to Include for Each Service:</h4>
+        <ul>
+            <li><strong>Service name:</strong> Keep it clear and simple</li>
+            <li><strong>Who it's for:</strong> Be specific about your ideal client</li>
+            <li><strong>The problem you solve:</strong> What pain point does this address?</li>
+            <li><strong>Your approach:</strong> What makes your method special?</li>
+            <li><strong>What's included:</strong> Clear deliverables or features</li>
+            <li><strong>Investment:</strong> Pricing (or "starting at" if it varies)</li>
+            <li><strong>Next steps:</strong> How to get started</li>
+        </ul>
+        
+        <h4>Copywriting Tips:</h4>
+        <ul>
+            <li>Name your services creatively if it fits your brand (but keep a descriptor too)</li>
+            <li>Use benefit-driven headlines: "Website Design That Converts" not just "Web Design"</li>
+            <li>Include mini case studies or results if you have them</li>
+            <li>Address objections within your copy</li>
+        </ul>
+        
+        <div class="tip-box">
+            <p><strong>Service Naming Ideas:</strong> You can get creative! Instead of "Basic Package," try "The Essentials" or "Foundation." Instead of "Premium," try "The Full Experience" or "Signature Service."</p>
+        </div>
+        
+        <h3>Contact Page</h3>
+        <p>Make it easy for people to reach out. Remove any friction between them and that first hello.</p>
+        
+        <h4>What to Include:</h4>
+        <ul>
+            <li><strong>Warm invitation:</strong> A friendly paragraph encouraging contact</li>
+            <li><strong>Contact form:</strong> Name, email, and message fields (keep it simple)</li>
+            <li><strong>Response time:</strong> Set expectations (e.g., "I'll respond within 48 hours")</li>
+            <li><strong>Alternative contact:</strong> Email address for those who prefer it</li>
+            <li><strong>Social links:</strong> Other ways to connect</li>
+            <li><strong>FAQ:</strong> Answer common questions to reduce barriers</li>
+        </ul>
+        
+        <div class="example-box">
+            <strong>Inviting Contact Page Openers:</strong><br>
+            "I'd love to hear about your project!"<br>
+            "Let's create something beautiful together"<br>
+            "Have a question? A wild idea? Just want to say hi? I'm all ears!"<br>
+            "Your dream website is just a conversation away"
+        </div>
+        
+        <div class="section-divider">• • •</div>
+        
+        <h2>Part 2: Photography & Visual Content</h2>
+        
+        <p>Great visuals make your website memorable. They set the mood before anyone reads a single word. Let's make sure yours are on point.</p>
+        
+        <h3>Choosing the Right Images</h3>
+        
+        <h4>Types of Images You'll Need:</h4>
+        <ul>
+            <li><strong>Hero images:</strong> Large, impactful images for page headers</li>
+            <li><strong>About photos:</strong> Professional headshots and lifestyle shots of you</li>
+            <li><strong>Service images:</strong> Visuals that represent what you do</li>
+            <li><strong>Detail shots:</strong> Smaller images to break up text</li>
+            <li><strong>Social proof:</strong> Client work, testimonials with photos, etc.</li>
+        </ul>
+        
+        <h4>Photography Style Tips:</h4>
+        <ul>
+            <li><strong>Consistency is key:</strong> Choose images with similar lighting and color tones</li>
+            <li><strong>Natural light:</strong> Always looks best — shoot near windows or outdoors</li>
+            <li><strong>Real over perfect:</strong> Authentic shots often connect better than overly staged ones</li>
+            <li><strong>Brand alignment:</strong> Images should feel like they belong to your brand</li>
+            <li><strong>Diversity matters:</strong> Show different people, perspectives, and situations</li>
+        </ul>
+        
+        <h3>Organizing Your Image Files</h3>
+        
+        <p>A little organization now saves us both time later. Here's my simple system:</p>
+        
+        <h4>File Naming Convention:</h4>
+        <ul>
+            <li>Use descriptive names: <code>about-jane-headshot.jpg</code> not <code>IMG_4839.jpg</code></li>
+            <li>Include the page: <code>home-hero-image.jpg</code></li>
+            <li>Use hyphens, not spaces: <code>service-web-design.jpg</code></li>
+            <li>Keep it lowercase: easier for everyone</li>
+        </ul>
+        
+        <h4>Recommended Stock Photo Sites:</h4>
+        <ul>
+            <li><strong>Unsplash:</strong> Beautiful free photos (unsplash.com)</li>
+            <li><strong>Pexels:</strong> Diverse free stock photos (pexels.com)</li>
+            <li><strong>Stocksy:</strong> Premium, unique photos (stocksy.com)</li>
+            <li><strong>Death to Stock:</strong> Authentic lifestyle photos (deathtothestockphoto.com)</li>
+            <li><strong>Burst by Shopify:</strong> Free business-focused images (burst.shopify.com)</li>
+        </ul>
+        
+        <div class="tip-box">
+            <p><strong>Image Quality Checklist:</strong> Is it at least 1920px wide for hero images? Is it under 2MB for web performance? Does it tell a story or evoke emotion? If yes to all three, you're golden!</p>
+        </div>
+        
+        <div class="section-divider">• • •</div>
+        
+        <h2>Part 3: Sending Your Content to Me</h2>
+        
+        <p>You've done the hard work of creating your content. Now let's get it to me in a way that's easy for both of us. Don't worry — I've got options for every comfort level!</p>
+        
+        <h3>Option 1: Google Drive (Recommended)</h3>
+        <p>This is my favorite because we can both access everything easily and make updates in real-time.</p>
+        
+        <h4>Step-by-Step Instructions:</h4>
+        <ol>
+            <li><span class="step-number">1</span> Go to drive.google.com (create a free account if needed)</li>
+            <li><span class="step-number">2</span> Click "New" → "Folder"</li>
+            <li><span class="step-number">3</span> Name it "[Your Name] Website Content"</li>
+            <li><span class="step-number">4</span> Inside, create subfolders:
+                <ul>
+                    <li>Copy (for all your text documents)</li>
+                    <li>Images (for all photos and graphics)</li>
+                    <li>Logos (for your brand files)</li>
+                    <li>Inspiration (optional — for reference sites you like)</li>
+                </ul>
+            </li>
+            <li><span class="step-number">5</span> Upload your files to the appropriate folders</li>
+            <li><span class="step-number">6</span> Right-click the main folder → "Share"</li>
+            <li><span class="step-number">7</span> Enter my email: [your email here]</li>
+            <li><span class="step-number">8</span> Click "Send" — Done!</li>
+        </ol>
+        
+        <h3>Option 2: Dropbox</h3>
+        <p>Similar to Google Drive, just a different platform. Great if you're already a Dropbox user.</p>
+        
+        <ul>
+            <li>Create a folder with your content organized the same way</li>
+            <li>Click "Share" → Add my email → Send invite</li>
+        </ul>
+        
+        <h3>Option 3: WeTransfer (For One-Time Sends)</h3>
+        <p>Perfect if you just want to send everything once without creating accounts.</p>
+        
+        <ul>
+            <li>Go to wetransfer.com</li>
+            <li>Upload your files (up to 2GB free)</li>
+            <li>Add my email and yours</li>
+            <li>Include a message like "Website content from [Your Name]"</li>
+            <li>Click Transfer!</li>
+        </ul>
+        
+        <h3>Option 4: Email (For Smaller Files)</h3>
+        <p>If you just have text documents and a few images, email works fine!</p>
+        
+        <ul>
+            <li>Send to: [your email]</li>
+            <li>Subject: "Website Content — [Your Name]"</li>
+            <li>Attach your documents and images</li>
+            <li>If files are too large, your email will tell you — then try one of the options above</li>
+        </ul>
+        
+        <div class="tip-box">
+            <p><strong>Not tech-savvy? No problem!</strong> Pick whichever option feels easiest to you. If you get stuck, just email me what you have and we'll figure it out together. The goal is to get your content to me, not to stress you out!</p>
+        </div>
+        
+        <div class="section-divider">• • •</div>
+        
+        <h2>Your Final Content Checklist</h2>
+        
+        <p>Almost there! Use this checklist to make sure you've gathered everything. Don't worry if you're missing something — we can always add it later.</p>
+        
+        <div class="checklist">
+            <h3>Content Checklist</h3>
+            
+            <label><input type="checkbox"> Home page copy (headline, intro, services overview)</label>
+            <label><input type="checkbox"> About page copy (your story, values, bio)</label>
+            <label><input type="checkbox"> Services descriptions (for each service you offer)</label>
+            <label><input type="checkbox"> Contact page copy (invitation to connect)</label>
+            <label><input type="checkbox"> Professional photos or headshots</label>
+            <label><input type="checkbox"> Logo files (if you have them)</label>
+            <label><input type="checkbox"> Testimonials or reviews (if available)</label>
+            <label><input type="checkbox"> Social media links</label>
+            <label><input type="checkbox"> Any additional pages you want (blog, portfolio, etc.)</label>
+            <label><input type="checkbox"> Examples of websites you love (for inspiration)</label>
+            <label><input type="checkbox"> Your brand colors (if you have them)</label>
+            <label><input type="checkbox"> Any must-have features or functionality</label>
+        </div>
+        
+        <div class="intro-box" style="margin-top: 60px;">
+            <p><strong>You did it!</strong></p>
+            <p>Seriously, gathering all this content is a big deal, and you've made it through. Take a moment to celebrate!</p>
+            <p>Once I receive your content, I'll review everything and reach out if I have any questions. Then the real fun begins — I get to bring your vision to life!</p>
+            <p>Remember: Your website is a living thing. It can evolve and grow with your business. We're not aiming for perfection on day one — we're aiming for a beautiful foundation that represents you authentically.</p>
+            <p>Can't wait to create something amazing together!</p>
+            <p><strong>— Zeke</strong><br>
+            RubyZ Maison</p>
+        </div>
+        
+        <div class="section-divider">• • •</div>
+        
+        <h2>Bonus: Quick Copywriting Formulas</h2>
+        
+        <p>Stuck on how to write something? These formulas always work:</p>
+        
+        <h4>The Problem-Agitate-Solution Formula:</h4>
+        <ol>
+            <li>Identify the problem your client faces</li>
+            <li>Agitate it (remind them why it's frustrating)</li>
+            <li>Present your solution</li>
+        </ol>
+        
+        <div class="example-box">
+            "Tired of having a website that doesn't represent your brand? You know that DIY site isn't cutting it anymore, and potential clients are clicking away. Let's build you a professional website that actually converts visitors into clients."
+        </div>
+        
+        <h4>The Before-After-Bridge Formula:</h4>
+        <ol>
+            <li>Before: Where they are now</li>
+            <li>After: Where they want to be</li>
+            <li>Bridge: How you help them get there</li>
+        </ol>
+        
+        <div class="example-box">
+            "Right now, you're juggling social media, word-of-mouth, and hoping clients find you. Imagine having a beautiful website that works 24/7, attracting your dream clients while you sleep. I'll design and build that website for you."
+        </div>
+        
+        <h4>The Feature-Benefit Formula:</h4>
+        <p>For every feature, explain the benefit:</p>
+        <ul>
+            <li>"Mobile-responsive design" → "Your site looks perfect on every device"</li>
+            <li>"SEO optimization" → "Your ideal clients can actually find you on Google"</li>
+            <li>"Fast loading speed" → "No more losing visitors to slow load times"</li>
+        </ul>
+        
+        <h2>Helpful Resources</h2>
+        
+        <h4>Free Writing Tools:</h4>
+        <ul>
+            <li><strong>Hemingway App:</strong> Makes your writing clear and bold (hemingwayapp.com)</li>
+            <li><strong>Grammarly:</strong> Catches typos and grammar issues (grammarly.com)</li>
+            <li><strong>Answer the Public:</strong> Find out what people search for (answerthepublic.com)</li>
+            <li><strong>Headline Analyzer:</strong> Test your headlines (coschedule.com/headline-analyzer)</li>
+        </ul>
+        
+        <h4>Color Psychology Quick Guide:</h4>
+        <ul>
+            <li><strong>Red:</strong> Energy, passion, urgency</li>
+            <li><strong>Blue:</strong> Trust, stability, calm</li>
+            <li><strong>Green:</strong> Growth, health, nature</li>
+            <li><strong>Yellow:</strong> Optimism, creativity, warmth</li>
+            <li><strong>Purple:</strong> Luxury, creativity, wisdom</li>
+            <li><strong>Black:</strong> Sophistication, elegance, power</li>
+            <li><strong>White:</strong> Simplicity, cleanliness, space</li>
+        </ul>
+        
+        <div class="footer">
+            <p>© 2025 RubyZ Maison — The House of Modern Design</p>
+            <p>Melbourne Beach, Florida</p>
+        </div>
+    </div>
+</body>
+</html>
